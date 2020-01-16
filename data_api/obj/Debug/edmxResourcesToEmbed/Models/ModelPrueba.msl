@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prueba_maikolModelStoreContainer" CdmEntityContainer="prueba_maikolEntities">
+    <EntitySetMapping Name="aut_user">
+      <EntityTypeMapping TypeName="prueba_maikolModel.aut_user">
+        <MappingFragment StoreEntitySet="aut_user">
+          <ScalarProperty Name="estado_aut" ColumnName="estado_aut" />
+          <ScalarProperty Name="password_aut" ColumnName="password_aut" />
+          <ScalarProperty Name="user_aut" ColumnName="user_aut" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto">
+      <EntityTypeMapping TypeName="prueba_maikolModel.Producto">
+        <MappingFragment StoreEntitySet="Producto">
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="prueba_maikolModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetCliente" FunctionName="prueba_maikolModel.Store.GetCliente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="prueba_maikolModel.GetCliente_Result">
+          <ScalarProperty Name="id_key" ColumnName="id_key" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

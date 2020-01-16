@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prueba_maikolModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="prueba_maikolEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="aut_user" EntityType="prueba_maikolModel.aut_user" />
+    <EntitySet Name="Producto" EntityType="prueba_maikolModel.Producto" />
+    <EntitySet Name="Cliente" EntityType="prueba_maikolModel.Cliente" />
+    <FunctionImport Name="GetCliente" ReturnType="Collection(prueba_maikolModel.GetCliente_Result)" />
+  </EntityContainer>
+  <EntityType Name="aut_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_aut" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="password_aut" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="estado_aut" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="id_key" />
+    </Key>
+    <Property Name="id_key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="id_key" />
+    </Key>
+    <Property Name="id_key" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="GetCliente_Result">
+    <Property Type="Int32" Name="id_key" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Apellido" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CC" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="estado" Nullable="true" MaxLength="3" />
+  </ComplexType>
+</Schema>
